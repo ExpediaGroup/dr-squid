@@ -1,0 +1,59 @@
+{
+  "enabled": true,
+  "services": [
+    {
+      "name": "TestService",
+      "description": "TestService does things.",
+      "pattern": "http://www.testservice.com/*",
+      "enabled": true,
+      "behavior": {
+        "failure": {
+          "percentage": 20,
+          "mock_response_body": "Failure Body",
+          "mock_status_code": 500,
+          "delay": {
+            "type": "range",
+            "min_value_in_msecs": 1000,
+            "max_value_in_msecs": 2000
+          }
+        },
+        "success": {
+          "percentage": 70,
+          "mock_response_body": "Success Body",
+          "mock_status_code": 200,
+          "spoofed": true,
+          "delay": {
+            "type": "normal",
+            "mean_value_in_msecs": 1000,
+            "std_value_in_msecs": 100
+          }
+        },
+        "timeout": {
+          "percentage": 10,
+          "delay": {
+            "type": "fixed",
+            "fixed_value_in_msecs": 5000
+          }
+        }
+      }
+    },
+    {
+      "name": "HelperService",
+      "description": "HelperService does other things.",
+      "pattern": "*helperservice*",
+      "enabled": false,
+      "behavior": {
+        "success": {
+          "percentage": 100,
+          "mock_response_body": "Success Body",
+          "mock_status_code": 200,
+          "spoofed": true,
+          "delay": {
+            "type": "fixed",
+            "fixed_value_in_msecs": 100
+          }
+        }
+      }
+    }
+  ]
+}

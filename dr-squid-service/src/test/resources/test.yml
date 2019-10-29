@@ -1,0 +1,16 @@
+server:
+ port: 8090
+ context-path: /drsquid-service
+
+management:
+ port: 8092
+ security:
+  enabled: false
+
+logging:
+ level: info
+ egencia:
+  kivas:
+   enabled: false
+  fluentd:
+   enabled: false

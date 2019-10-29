@@ -1,0 +1,18 @@
+This is a post body
+It will contain commands in it...
+Usually telling a service to do something
+So it could be JSON...
+
+{
+    "command": {
+        "type": "SomeRequest",
+        "data": {
+            "key": "value"
+        }
+    }
+}
+
+... or really it could be anything, even XML, or just plain text!
+But it's probably JSON.
+In any of these cases, we want to match on a certain thing
+This should NOT match because it doesn't contain the magic word!

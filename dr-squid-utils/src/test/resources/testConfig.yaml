@@ -1,0 +1,31 @@
+---
+enabled: true
+services:
+  - name: Google
+    description: Google searches the web.
+    pattern: "*google*"
+    enabled: true
+    logging_level: INFO
+    behavior:
+      failure:
+        percentage: 100
+        mock_response_body: Failure Body
+        mock_status_code: 400
+        delay:
+          type: fixed
+          fixed_value_in_msecs: 100
+  - name: Post To Me
+    description: Accepts post calls.
+    pattern: "*posttome*"
+    method: POST
+    bodyKeyword: keyword
+    enabled: true
+    logging_level: INFO
+    behavior:
+      failure:
+        percentage: 100
+        mock_response_body: Failure Body
+        mock_status_code: 400
+        delay:
+          type: fixed
+          fixed_value_in_msecs: 100

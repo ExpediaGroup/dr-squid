@@ -1,0 +1,19 @@
+info:
+  stage: ${STAGE:dev}
+  version: @project.version@
+  build:
+   artifact: @project.artifactId@
+   name: @project.name@
+   description: @project.description@
+   version: @project.version@
+   time: @timestamp@
+#  Uncomment once the project is in git
+#  commit:
+#      id: @git.commit.id@
+
+spring:
+ application:
+  name: @project.artifactId@
+ cloud:
+  consul:
+   enabled: false

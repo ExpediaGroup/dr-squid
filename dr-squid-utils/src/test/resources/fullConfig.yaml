@@ -1,0 +1,90 @@
+---
+enabled: true
+services:
+  - name: TestService
+    description: TestService does things.
+    pattern: http://www.testservice.com/*
+    enabled: true
+    behavior:
+      success:
+        percentage: 70
+        mock_response_body: Success Body
+        mock_status_code: 200
+        spoofed: true
+        delay:
+          type: normal
+          mean_value_in_msecs: 1000
+          std_value_in_msecs: 100
+      failure:
+        percentage: 20
+        mock_response_body: Failure Body
+        mock_status_code: 500
+        delay:
+          type: range
+          min_value_in_msecs: 1000
+          max_value_in_msecs: 2000
+      timeout:
+        percentage: 10
+        delay:
+          type: fixed
+          fixed_value_in_msecs: 5000
+  - name: HelperService
+    description: HelperService does other things.
+    pattern: "*helperservice*"
+    enabled: false
+    behavior:
+      success:
+        percentage: 100
+        mock_response_body: Success Body
+        mock_status_code: 200
+        spoofed: true
+        delay:
+          type: fixed
+          fixed_value_in_msecs: 100
+databases:
+  - type: MONGO
+    description: Mongo is a type of database.
+    enabled: true
+    behavior:
+      success:
+        percentage: 100
+        spoofed: true
+        delay:
+          type: fixed
+          fixed_value_in_msecs: 100
+        MORE FIELDS: TO BE DETERMINED
+      failure:
+        percentage: 0
+        delay:
+          type: fixed
+          fixed_value_in_msecs: 20
+        MORE FIELDS: TO BE DETERMINED
+      timeout:
+        percentage: 0
+        delay:
+          type: fixed
+          fixed_value_in_msecs: 5000
+        MORE FIELDS: TO BE DETERMINED
+  - type: SQL
+    description: SQL is another type of database.
+    enabled: false
+    behavior:
+      success:
+        percentage: 100
+        spoofed: true
+        delay:
+          type: fixed
+          fixed_value_in_msecs: 100
+        MORE FIELDS: TO BE DETERMINED
+      failure:
+        percentage: 0
+        delay:
+          type: fixed
+          fixed_value_in_msecs: 20
+        MORE FIELDS: TO BE DETERMINED
+      timeout:
+        percentage: 0
+        delay:
+          type: fixed
+          fixed_value_in_msecs: 5000
+        MORE FIELDS: TO BE DETERMINED
