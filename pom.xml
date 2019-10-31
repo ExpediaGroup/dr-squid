@@ -18,6 +18,20 @@
         </license>
     </licenses>
 
+    <organization>
+        <name>Expedia Group</name>
+        <url>http://expediagroup.com</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>Expedia Group Committers</name>
+            <email>oss@expediagroup.com</email>
+            <organization>Expedia Group</organization>
+            <organizationUrl>https://expediagroup.com</organizationUrl>
+        </developer>
+    </developers>
+
     <modules>
         <module>dr-squid-utils</module>
         <module>dr-squid-service</module>
