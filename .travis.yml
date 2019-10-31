@@ -22,4 +22,4 @@ deploy:
   on:
     tags: true
     jdk: openjdk8
-    repo: egencia/dr-shadow
+    repo: ExpediaGroup/dr-squid
