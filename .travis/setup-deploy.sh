@@ -18,7 +18,7 @@ do
 done
 
 echo "Setting up env for deployment"
-openssl aes-256-cbc -K $encrypted_74e79bd2c10b_key -iv $encrypted_74e79bd2c10b_iv -in .travis/codesigning.asc.enc -out .travis/codesigning.asc -d
+openssl aes-256-cbc -K $encrypted_8964be050e58_key -iv $encrypted_8964be050e58_iv -in .travis/codesigning.asc.enc -out .travis/codesigning.asc -d
 if [ $? -ne 0 ] ; then
 	echo "Unable to process gpg keys cannot sign"
 	exit 1
