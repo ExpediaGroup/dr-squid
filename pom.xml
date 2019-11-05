@@ -6,7 +6,7 @@
     <packaging>pom</packaging>
     <name>dr-squid-parent</name>
     <artifactId>dr-squid-parent</artifactId>
-    <version>1.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <description>Chaos and resiliency testing framework for Spring Boot applications</description>
 
@@ -24,6 +24,13 @@
     </modules>
 
     <inceptionYear>2019</inceptionYear>
+
+    <scm>
+        <url>https://github.com/ExpediaGroup/dr-squid</url>
+        <connection>scm:git:ssh://github.com/ExpediaGroup/dr-squid.git</connection>
+        <developerConnection>scm:git:ssh://github.com/ExpediaGroup/dr-squid.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
